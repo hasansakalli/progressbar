@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        margin-top: 3rem;
+      }
+      .linie {
+        height: 20px;
+        background-color: rgb(254, 5, 5);
+        width: 0px;
+        margin-bottom: 3rem;
+        text-align: center;
+        align-items: center;
+        color: white;
+        border-radius: 8px;
+      }
+      .container {
+        display: grid;
+        place-items: center;
+      }
+      input {
+        height: 20px;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+    </style>
+    <div class="container">
+      <div class="linie"></div>
+      <input
+        id="inputNumber"
+        type="number"
+        name=""
+        placeholder="Eintragen Wert"
+        oninput="start()"
+      />
+    </div>
+    <script>
+      const linie = document.querySelector(".linie");
+      const inputNumber = document.getElementById("inputNumber");
+
+      function start() {
+        const sonuc = (linie.style.width = inputNumber.value + "px");
+        linie.innerHTML = sonuc;
+
+        if (inputNumber.value < 40) {
+          document.body.style.background = "skyBlue";
+        } else if (inputNumber.value < 80) {
+          document.body.style.background = "yellow";
+        } else if (inputNumber.value < 120) {
+          document.body.style.background = "gray";
+        } else if (inputNumber.value < 200) {
+          document.body.style.background = "green";
+        }
+      }
+    </script>
+  </body>
+</html>
